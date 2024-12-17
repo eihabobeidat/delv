@@ -24,6 +24,26 @@
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="assets/css/style.css" rel="stylesheet">
 
+	<style>
+		@media (max-width: 425px) {
+			.get-started-button {
+				display: block;
+				/* Converts the container to a block */
+				text-align: center;
+				/* Centers the content */
+				margin: 0 auto;
+				/* Ensures it aligns in the center */
+				z-index: 1;
+			}
+
+			.get-started-button img {
+				display: inline-block;
+				/* Centers the image itself */
+				margin: 0 auto;
+				/* Ensures perfect centering */
+			}
+		}
+	</style>
 
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
 	<!--[if lt IE 9]>
@@ -107,10 +127,12 @@
 							</div>
 							<div class="slide--bio">From ideation to execution, we craft AI-powered mobile apps that
 								engage users, streamline workflows, and deliver exceptional experiences.</div>
+
 							<div class="slide--action">
-								<div class="pricing--body"> <a class="btn btn--white btn--bordered"
-										data-scroll="scrollTo" href="#cta">Get
-										Started</a></div>
+								<div class="pricing--body get-started-button">
+									<a class="btn btn--white btn--bordered" data-scroll="scrollTo" href="#cta">Get
+										Started</a>
+								</div>
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2 wow fadeInUp" data-wow-duration="1s">

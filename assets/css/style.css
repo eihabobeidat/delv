@@ -1316,7 +1316,7 @@ section {
 }
 
 .bg-video {
-	height: 110%;
+	width: 100%;
 	overflow: hidden;
 	behavior: url("/PIE.htc");
 	transform: translateZ(0);
