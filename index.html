@@ -36,11 +36,16 @@
 				z-index: 1;
 			}
 
-			.get-started-button img {
-				display: inline-block;
-				/* Centers the image itself */
+			.col-xs-12 img.img-responsive {
+				display: block;
+				/* Makes the image a block element */
 				margin: 0 auto;
-				/* Ensures perfect centering */
+				/* Centers the image horizontally */
+				float: none;
+				/* Removes the pull-right alignment */
+				text-align: center;
+				/* Ensures it's aligned properly */
+				margin-block: 40px;
 			}
 		}
 	</style>
@@ -136,8 +141,7 @@
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2 wow fadeInUp" data-wow-duration="1s">
-							<img class="img-responsive pull-right" src="assets/images/mockup/iphone-7-black.png"
-								alt="screens">
+							<img class="img-responsive" src="assets/images/mockup/iphone-7-black.png" alt="screens">
 						</div>
 					</div>
 					<!-- .row end -->
