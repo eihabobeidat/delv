@@ -25,6 +25,10 @@
 	<link href="assets/css/style.css" rel="stylesheet">
 
 	<style>
+		.phone-image {
+			height: 530px;
+		}
+
 		@media (max-width: 768px) {
 			.get-started-button {
 				display: block;
@@ -46,6 +50,10 @@
 				text-align: center;
 				/* Ensures it's aligned properly */
 				margin-block: 40px;
+			}
+
+			.phone-image {
+				height: 330px;
 			}
 		}
 	</style>
@@ -89,9 +97,9 @@
 							</li>
 							<li><a data-scroll="scrollTo" href="#feature2">features</a>
 							</li>
-							<li><a data-scroll="scrollTo" href="#video">Portfolio</a>
+							<li><a data-scroll="scrollTo" href="#video">Commitment</a>
 							</li>
-							<li><a data-scroll="scrollTo" href="#screenshots">Clients</a>
+							<!-- <li><a data-scroll="scrollTo" href="#screenshots">Clients</a> -->
 							</li>
 							<!-- <li><a data-scroll="scrollTo" href="#reviews">reviews</a>
 							</li> -->
@@ -141,7 +149,8 @@
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2 wow fadeInUp" data-wow-duration="1s">
-							<img class="img-responsive" src="assets/images/mockup/iphone-7-black.png" alt="screens">
+							<img class="img-responsive phone-image" src="assets/images/mockup/iphone-7-black.png"
+								alt="screens">
 						</div>
 					</div>
 					<!-- .row end -->
@@ -259,21 +268,36 @@
 			<div class="container">
 				<div class="row clearfix">
 					<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
-						<div class="heading heading-1 mb-60 text--center wow fadeInUp" data-wow-duration="1s">
+						<div class="heading heading-1 mb-1 text--center wow fadeInUp" data-wow-duration="1s">
 							<h2 class="heading--title">Our Process</h2>
-							<p class="heading--desc">From concept to completion, we ensure a smooth, efficient workflow.
-							</p>
 						</div>
+
 					</div>
+
+
+
 					<!-- .col-md-6 end -->
 				</div>
 				<!-- .row end -->
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12">
 						<div class="center-block text-center mb-100 wow fadeInUp" data-wow-duration="1s">
+							<p class="heading--desc"> From the initial spark of an idea to the successful
+								launch of your
+								product, we guide you through every stage of the software development lifecycle. We
+								begin by gathering and analyzing requirements, collaborating with stakeholders to ensure
+								complete alignment on goals and outcomes. Next, we establish a robust architecture and
+								craft intuitive designs, incorporating user feedback through iterative prototyping to
+								validate each concept. Our skilled engineers then build and integrate the features,
+								leveraging best practices to maintain code quality and performance. Rigorous testing
+								follows to safeguard reliability, and once ready, we seamlessly deploy the software to
+								production. Finally, we provide continuous monitoring and support, guaranteeing a
+								smooth, efficient workflow that fosters continuous improvement and delivers a solution
+								tailored to your needs.
+							</p>
 							<div
 								style="border: 2px solid #ccc; border-radius: 15px; overflow: hidden; display: inline-block;">
-								<img src="assets/images/mockup/process.webp" alt="screenshots" height="600px">
+								<img src="assets/images/mockup/process.png" alt="screenshots" height="600px">
 							</div>
 						</div>
 					</div>
@@ -369,10 +393,8 @@
 			<div class="container">
 				<div class="row clearfix">
 					<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
-						<div class="heading heading-1 mb-60 text--center wow fadeInUp" data-wow-duration="1s">
-							<h2 class="heading--title text-white">Our Portfolio</h2>
-							<p class="heading--desc text-white">Explore our standout projects that showcase innovation,
-								craftsmanship, and results-driven design tailored for your success.</p>
+						<div class="heading heading-1 text--center wow fadeInUp" data-wow-duration="1s">
+							<h2 class="heading--title text-white">Our Commitment</h2>
 						</div>
 					</div>
 					<!-- .col-md-6 end -->
@@ -380,9 +402,12 @@
 				<!-- .row end -->
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 text-center wow fadeInUp" data-wow-duration="1s">
-						<div class="video-ipad-holder">
-							<iframe
-								src="https://static-00.iconduck.com/assets.00/video-x-generic-icon-512x388-1u3h7equ.png"></iframe>
+						<p class="heading--desc text-white">We employ industry-leading software development
+							practices to ensure each product meets the highest standards of quality and performance.
+						</p>
+						<div
+							style="border: 2px solid #ccc; border-radius: 15px; overflow: hidden; display: inline-block;">
+							<img src="assets/images/mockup/commitment.png" alt="screenshots" height="500px">
 						</div>
 					</div>
 				</div>
@@ -397,9 +422,10 @@
 				<div class="row clearfix">
 					<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
 						<div class="heading heading-1 mb-60 text--center wow fadeInUp" data-wow-duration="1s">
-							<h2 class="heading--title">Clients</h2>
-							<p class="heading--desc">Trusted by leading businesses to deliver innovative and impactful
-								solutions.</p>
+							<h2 class="heading--title">Building Success Together: Every Step of the Way</h2>
+							<p class="heading--desc">Throughout every phase, we actively involve our clients, from
+								requirements gathering to
+								deployment to guarantee complete transparency and collaboration.</p>
 						</div>
 					</div>
 					<!-- .col-md-6 end -->
@@ -407,38 +433,32 @@
 				<!-- .row end -->
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12">
-						<div class="carousel" data-slide="4" data-slide-res="2" data-autoplay="true" data-nav="false"
+						<!-- <div class="carousel" data-slide="4" data-slide-res="2" data-autoplay="true" data-nav="false"
 							data-dots="false" data-space="30" data-loop="true" data-speed="1000">
-							<!-- screenshot #1 -->
 							<div class="screenshot">
 								<img class="center-block" src="assets/images/screenshots/1.png" alt="client">
 							</div>
 
-							<!-- screenshot #2 -->
 							<div class="screenshot">
 								<img class="center-block" src="assets/images/screenshots/2.png" alt="client">
 							</div>
 
-							<!-- screenshot #3 -->
 							<div class="screenshot">
 								<img class="center-block" src="assets/images/screenshots/3.png" alt="client">
 							</div>
 
-							<!-- screenshot #4 -->
 							<div class="screenshot">
 								<img class="center-block" src="assets/images/screenshots/4.png" alt="client">
 							</div>
 
-							<!-- screenshot #5 -->
 							<div class="screenshot">
 								<img class="center-block" src="assets/images/screenshots/3.png" alt="clclientient">
 							</div>
 
-							<!-- screenshot #6 -->
 							<div class="screenshot">
 								<img class="center-block" src="assets/images/screenshots/2.png" alt="screenshot">
 							</div>
-						</div>
+						</div> -->
 					</div>
 					<!-- .col-md-12 end -->
 				</div>
@@ -563,7 +583,8 @@
 				<div class="row clearfix">
 					<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
 						<div class="heading heading-1 mb-50 text--center wow fadeInUp" data-wow-duration="1s">
-							<h2 class="heading--title">Explore Our Solutions</h2>
+							<h3 class="heading--title">Explore our latest product for tipping and appreciation NOD.
+							</h3>
 						</div>
 					</div>
 					<!-- .col-md-6 end -->
@@ -571,13 +592,15 @@
 				<!-- .row end -->
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 mb-100 wow fadeInUp" data-wow-duration="1s">
-						<a class="btn-hover" href="#"><img src="assets/images/appstore.png" alt="download appstore"></a>
-						<a class="btn-hover" href="#"><img src="assets/images/playstore.png"
-								alt="download playstore"></a>
+						<a class="btn-hover" href="https://apps.apple.com/au/app/the-nod/id6472388517"><img
+								src="assets/images/appstore.png" alt="download appstore"></a>
+						<a class="btn-hover"
+							href="https://play.google.com/store/apps/details?id=com.app.nod&pcampaignid=web_share"><img
+								src="assets/images/playstore.png" alt="download playstore"></a>
 					</div>
 					<!-- .col-md-12 end -->
 					<div class="col-xs-12 col-sm-12 col-md-12 wow fadeInUp" data-wow-duration="1s">
-						<img src="assets/images/mockup/2-layers.png" alt="mockup" />
+						<img class="phone-image" src="assets/images/mockup/2-layers.png" alt="mockup" />
 						<!-- .col-md-12 end -->
 					</div>
 				</div>
