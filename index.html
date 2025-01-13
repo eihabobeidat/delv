@@ -346,8 +346,8 @@
 
 							// Show the GIF for the first 3 seconds on larger screens
 							setTimeout(() => {
-								if (videoElement && videoElement.readyState >= 3) { // If video can play
-									videoElement.currentTime = 1; // Start video at the 3-second mark
+								if (videoElement && videoElement.readyState >= 2) { // If video can play
+									videoElement.currentTime = 2; // Start video at the 3-second mark
 									videoWrapper.style.backgroundImage = 'none'; // Remove the GIF background
 									videoElement.style.display = 'block'; // Show the video
 									videoElement.play(); // Ensure the video plays
