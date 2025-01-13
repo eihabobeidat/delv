@@ -64,6 +64,24 @@
 				height: 330px;
 			}
 		}
+
+		.bg-video-wrapper {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+
+		.bg-video,
+		#fallback-bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: -1;
+		}
 	</style>
 
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
@@ -142,6 +160,24 @@
 				text-align: center;
 			}
 		}
+
+		.bg-video-wrapper {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+
+		.bg-video,
+		#fallback-bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: -1;
+		}
 	</style>
 
 
@@ -167,6 +203,24 @@
 				/* Proper scaling for smaller screens */
 			}
 		}
+
+		.bg-video-wrapper {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+
+		.bg-video,
+		#fallback-bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: -1;
+		}
 	</style>
 
 
@@ -189,7 +243,32 @@
 			.slide--headline h1 {
 				margin-top: 150px !important;
 				/* Adds 150px space above the title */
+				font-size: 20px !important;
+
 			}
+
+			.slide--bio {
+				font-size: 10px;
+				/* Adjust font size for the supporting text */
+			}
+		}
+
+		.bg-video-wrapper {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+
+		.bg-video,
+		#fallback-bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: -1;
 		}
 	</style>
 
@@ -248,10 +327,40 @@
 		<section id="slider" class="section slider">
 			<div class="slide--item bg-dark">
 				<div class="bg-ytvideo bg-overlay bg-overlay-dark">
-					<video autoplay muted loop playsinline class="bg-video">
-						<source src="assets/video/intro-video.mp4" type="video/mp4">
-						Your browser does not support the video tag.
-					</video>
+
+					<div class="bg-video-wrapper"
+						style="position: relative; width: 100%; height: 100%; overflow: hidden; background-image: url('assets/video/intro-video.gif'); background-size: cover; background-position: center;">
+						<!-- Video -->
+						<video autoplay muted loop playsinline class="bg-video" id="background-video"
+							style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: none;">
+							<source src="assets/video/intro-video.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</div>
+
+					<script>
+						document.addEventListener("DOMContentLoaded", () => {
+							const videoElement = document.getElementById('background-video');
+							const videoWrapper = document.querySelector('.bg-video-wrapper');
+
+							// Show the GIF for the first 3 seconds
+							setTimeout(() => {
+								if (videoElement && videoElement.readyState >= 3) { // If video can play
+									videoElement.currentTime = 1; // Start video at the 3-second mark
+									videoWrapper.style.backgroundImage = 'none'; // Remove the GIF background
+									videoElement.style.display = 'block'; // Show the video
+									videoElement.play(); // Ensure the video plays
+								} else {
+									console.error("Video not ready to play. Keeping fallback GIF as background.");
+								}
+							}, 2000); // Show GIF for 3 seconds
+						});
+					</script>
+
+
+
+
+
 				</div>
 				<div class="container">
 					<div class="row">
@@ -300,7 +409,100 @@
 
 		<!-- Feature #2
 		============================================= -->
-
+		<section id="feature2" class="section feature feature-2 text-center bg-white">
+			<div class="container">
+				<div class="row clearfix">
+					<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+						<div class="heading heading-1 mb-80 text--center wow fadeInUp" data-wow-duration="1s">
+							<h2 class="heading--title">Key Features</h2>
+							<p class="heading--desc">Discover the essentials that drive innovation, simplicity, and
+								results tailored just for you!</p>
+						</div>
+					</div>
+					<!-- .col-md-6 end -->
+				</div>
+				<!-- .row end -->
+				<div class="row mb-60">
+					<!-- Panel #1 -->
+					<div class="col-xs-12 col-sm-4 col-md-4">
+						<div class="feature-panel wow fadeInUp" data-wow-duration="1s">
+							<div class="feature--icon">
+								<i class="lnr lnr-rocket"></i>
+							</div>
+							<div class="feature--content">
+								<h3>rapid development</h3>
+								<p>Infuse intelligence with AI-driven features and personalized solutions.</p>
+							</div>
+						</div>
+					</div>
+					<!-- Panel #2 -->
+					<div class="col-xs-12 col-sm-4 col-md-4">
+						<div class="feature-panel wow fadeInUp" data-wow-duration="1s">
+							<div class="feature--icon">
+								<i class="lnr lnr-smartphone"></i>
+							</div>
+							<div class="feature--content">
+								<h3>Custom Mobile Apps</h3>
+								<p>Intelligent features tailored to your business needs.</p>
+							</div>
+						</div>
+					</div>
+					<!-- Panel #3 -->
+					<div class="col-xs-12 col-sm-4 col-md-4">
+						<div class="feature-panel wow fadeInUp" data-wow-duration="1s">
+							<div class="feature--icon">
+								<i class="lnr lnr-diamond"></i>
+							</div>
+							<div class="feature--content">
+								<h3>Human-Centric Design</h3>
+								<p>Intuitive and engaging user experiences that resonate.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- .row end -->
+				<div class="row">
+					<!-- Panel #4 -->
+					<div class="col-xs-12 col-sm-4 col-md-4">
+						<div class="feature-panel wow fadeInUp" data-wow-duration="1s">
+							<div class="feature--icon">
+								<i class="lnr lnr-layers"></i>
+							</div>
+							<div class="feature--content">
+								<h3>Scalable Solutions</h3>
+								<p>Architectures designed to grow seamlessly with your business.</p>
+							</div>
+						</div>
+					</div>
+					<!-- Panel #5 -->
+					<div class="col-xs-12 col-sm-4 col-md-4">
+						<div class="feature-panel wow fadeInUp" data-wow-duration="1s">
+							<div class="feature--icon">
+								<i class="lnr lnr-briefcase"></i>
+							</div>
+							<div class="feature--content">
+								<h3>Comprehensive Services</h3>
+								<p>Streamline internal processes and empower your workforce.</p>
+							</div>
+						</div>
+					</div>
+					<!-- Panel #6 -->
+					<div class="col-xs-12 col-sm-4 col-md-4">
+						<div class="feature-panel wow fadeInUp" data-wow-duration="1s">
+							<div class="feature--icon">
+								<i class="lnr lnr-checkmark-circle"></i>
+							</div>
+							<div class="feature--content">
+								<h3>End-to-End Expertise</h3>
+								<p>End-to-end expertise from concept to deployment and beyond.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- .row end -->
+			</div>
+			<!-- .container end -->
+		</section>
 
 
 		<!-- #feature2 end -->
@@ -532,7 +734,8 @@
 							</div>
 							<!-- Lower Half: Title and Description -->
 							<div style="background-color: white; padding: 15px; text-align: center; min-height: 170px;">
-								<h2 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">OneFleet</h2>
+								<h2 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">OneFleet +
+									SmartLockers</h2>
 								<p style="font-size: 12px; color: #666;">An Australian sovereign solution for user and
 									device lifecycle management, trusted by governments, financial institutions,
 									charities, and organisations of all sizes.
@@ -806,6 +1009,24 @@
 							width: 75px;
 							height: 75px;
 						}
+					}
+
+					.bg-video-wrapper {
+						position: relative;
+						width: 100%;
+						height: 100%;
+						overflow: hidden;
+					}
+
+					.bg-video,
+					#fallback-bg {
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						z-index: -1;
 					}
 				</style>
 
