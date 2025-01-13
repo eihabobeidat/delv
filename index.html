@@ -346,25 +346,29 @@
 							const fallbackBg = document.getElementById('fallback-bg');
 							const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-							if (isMobile) {
-								// Use GIF for mobile devices
-								fallbackBg.style.display = 'block';
-								videoElement.style.display = 'none';
-							} else {
-								// Use video for larger screens
-								fallbackBg.style.display = 'none';
-								videoElement.style.display = 'block';
-
-								// Ensure the video plays correctly
-								videoElement.addEventListener('canplay', () => {
-									videoElement.play();
-								});
-
-								videoElement.addEventListener('error', () => {
-									console.error("Video failed to load. Displaying fallback GIF.");
+							if (fallbackBg && videoElement) {
+								if (isMobile) {
+									// Use GIF for mobile devices
 									fallbackBg.style.display = 'block';
 									videoElement.style.display = 'none';
-								});
+								} else {
+									// Use video for larger screens
+									fallbackBg.style.display = 'none';
+									videoElement.style.display = 'block';
+
+									// Ensure the video plays correctly
+									videoElement.addEventListener('canplay', () => {
+										videoElement.play();
+									});
+
+									videoElement.addEventListener('error', () => {
+										console.error("Video failed to load. Displaying fallback GIF.");
+										fallbackBg.style.display = 'block';
+										videoElement.style.display = 'none';
+									});
+								}
+							} else {
+								console.error("Elements with IDs 'background-video' or 'fallback-bg' not found.");
 							}
 						});
 
