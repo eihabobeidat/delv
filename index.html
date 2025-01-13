@@ -327,66 +327,39 @@
 		<section id="slider" class="section slider">
 			<div class="slide--item bg-dark">
 				<div class="bg-ytvideo bg-overlay bg-overlay-dark">
-					<div class="bg-video-wrapper" id="background-wrapper">
+
+					<div class="bg-video-wrapper"
+						style="position: relative; width: 100%; height: 100%; overflow: hidden; background-image: url('assets/video/intro-video.gif'); background-size: cover; background-position: center;">
 						<!-- Video -->
 						<video autoplay muted loop playsinline class="bg-video" id="background-video"
 							style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: none;">
 							<source src="assets/video/intro-video.mp4" type="video/mp4">
 							Your browser does not support the video tag.
 						</video>
-						<!-- Fallback GIF -->
-						<div id="fallback-bg"
-							style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('assets/video/intro-video.gif'); background-size: cover; background-position: center;">
-						</div>
 					</div>
 
 					<script>
 						document.addEventListener("DOMContentLoaded", () => {
 							const videoElement = document.getElementById('background-video');
-							const fallbackBg = document.getElementById('fallback-bg');
-							const isMobile = window.matchMedia("(max-width: 768px)").matches;
+							const videoWrapper = document.querySelector('.bg-video-wrapper');
 
-							if (fallbackBg && videoElement) {
-								if (isMobile) {
-									// Use GIF for mobile devices
-									fallbackBg.style.display = 'block';
-									videoElement.style.display = 'none';
+							// Show the GIF for the first 3 seconds
+							setTimeout(() => {
+								if (videoElement && videoElement.readyState >= 3) { // If video can play
+									videoElement.currentTime = 1; // Start video at the 3-second mark
+									videoWrapper.style.backgroundImage = 'none'; // Remove the GIF background
+									videoElement.style.display = 'block'; // Show the video
+									videoElement.play(); // Ensure the video plays
 								} else {
-									// Use video for larger screens
-									fallbackBg.style.display = 'none';
-									videoElement.style.display = 'block';
-
-									// Ensure the video plays correctly
-									videoElement.addEventListener('canplay', () => {
-										videoElement.play();
-									});
-
-									videoElement.addEventListener('error', () => {
-										console.error("Video failed to load. Displaying fallback GIF.");
-										fallbackBg.style.display = 'block';
-										videoElement.style.display = 'none';
-									});
+									console.error("Video not ready to play. Keeping fallback GIF as background.");
 								}
-							} else {
-								console.error("Elements with IDs 'background-video' or 'fallback-bg' not found.");
-							}
-						});
-
-						// Optional: Add a resize listener to handle viewport changes dynamically
-						window.addEventListener('resize', () => {
-							const isMobile = window.matchMedia("(max-width: 768px)").matches;
-							const videoElement = document.getElementById('background-video');
-							const fallbackBg = document.getElementById('fallback-bg');
-
-							if (isMobile) {
-								fallbackBg.style.display = 'block';
-								videoElement.style.display = 'none';
-							} else {
-								fallbackBg.style.display = 'none';
-								videoElement.style.display = 'block';
-							}
+							}, 2000); // Show GIF for 3 seconds
 						});
 					</script>
+
+
+
+
 
 				</div>
 				<div class="container">
