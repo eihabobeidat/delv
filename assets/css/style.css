@@ -1307,7 +1307,7 @@ section {
 }
 
 /* Background Video */
-.bg-ytvideo {
+.bgx-ytvideo {
 	position: absolute !important;
 	height: 100%;
 	width: 100%;
@@ -2258,7 +2258,7 @@ li a:hover,
 	bottom: -800px;
 }
 
-.slide--item .bg-ytvideo {
+.slide--item .bgx-ytvideo {
 	height: 800px;
 }
 

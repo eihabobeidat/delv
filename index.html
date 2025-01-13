@@ -326,7 +326,7 @@
 		============================================= -->
 		<section id="slider" class="section slider">
 			<div class="slide--item bg-dark">
-				<div class="bg-ytvideo bg-overlay bg-overlay-dark">
+				<div class="bgx-ytvideo bg-overlay bg-overlay-dark">
 
 					<div class="bg-video-wrapper"
 						style="position: relative; width: 100%; height: 100%; overflow: hidden; background-image: url('assets/video/intro-video.gif'); background-size: cover; background-position: center;">
@@ -342,8 +342,9 @@
 						document.addEventListener("DOMContentLoaded", () => {
 							const videoElement = document.getElementById('background-video');
 							const videoWrapper = document.querySelector('.bg-video-wrapper');
+							const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-							// Show the GIF for the first 3 seconds
+							// Show the GIF for the first 3 seconds on larger screens
 							setTimeout(() => {
 								if (videoElement && videoElement.readyState >= 3) { // If video can play
 									videoElement.currentTime = 1; // Start video at the 3-second mark
@@ -351,11 +352,12 @@
 									videoElement.style.display = 'block'; // Show the video
 									videoElement.play(); // Ensure the video plays
 								} else {
-									console.error("Video not ready to play. Keeping fallback GIF as background.");
+									console.log(videoElement);
 								}
 							}, 2000); // Show GIF for 3 seconds
 						});
 					</script>
+
 
 
 
