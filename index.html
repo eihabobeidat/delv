@@ -330,13 +330,12 @@
 
 					<div class="bg-video-wrapper"
 						style="position: relative; width: 100%; height: 100%; overflow: hidden; background-image: url('assets/images/mockup/commitment.jpg'); background-size: cover; background-position: center;">
-						<!-- Video -->
-						<!-- <video autoplay muted loop playsinline class="bg-video" id="background-video"
-							style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: none;">
-							<source src="assets/video/intro-video.mp4" type="video/mp4">
-							Your browser does not support the video tag.
-						</video> -->
+						<!-- Dark overlay -->
+						<div
+							style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: 1;">
+						</div>
 					</div>
+
 
 					<!-- <script>
 						document.addEventListener("DOMContentLoaded", () => {
@@ -561,8 +560,7 @@
 				<div class="row clearfix">
 					<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
 						<div class="heading heading-1 mb-60 text--center wow fadeInUp" data-wow-duration="1s">
-							<h3 class="heading--title">Building Success Together:</h3>
-							<h3 class="heading--title">Every Step of the Way</h3>
+							<h3 class="heading--title">Building Success Together: Every Step of the Way</h3>
 
 							<p class="heading--desc">From idea to launch, we partner with you at every
 								phase—ensuring
@@ -871,12 +869,10 @@
 				<div class="row clearfix">
 					<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 						<div class="heading heading-1 mb-60 text--center wow fadeInUp" data-wow-duration="1s">
-							<h2 class="heading--title text-white">Contact Us</h2>
-							<p class="heading--desc text-white">Let's connect and take your ideas to the next
-								level!
-								Whether you're building websites, portfolios, or landing pages, we deliver
-								solutions
-								crafted with passion, simplicity, and creativity.</p>
+							<h2 class="heading--title text-white">Transform Your Idea Today!</h2>
+							<p class="heading--desc text-white">Unlock the potential of your vision with our
+								cutting-edge solutions. Get started now and receive a free consultation to bring your
+								ideas to life.</p>
 						</div>
 					</div>
 					<!-- .col-md-6 end -->
@@ -886,13 +882,10 @@
 					<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 						<form class="mb-0 form-action wow fadeInUp" data-wow-duration="1s"
 							action="mailto:sam.smair@delv.com" method="post" enctype="text/plain">
-							<div class="input-group">
-								<input type="email" class="form-control" placeholder="E-mail address" name="email"
-									required>
-								<span class="input-group-btn">
-									<input type="submit" class="btn btn--primary" value="Send Email" name="submit">
-								</span>
-							</div>
+
+							<input type="submit" class="btn btn--primary"
+								style="border-radius: 3px; width: auto; padding-inline: 10px;"
+								value="Get a free consultation" name="submit">
 							<!-- .input-group end -->
 						</form>
 					</div>
@@ -1015,7 +1008,7 @@
 						transform: scale(0.9);
 					}
 
-					.location:hover .location-title {
+					.location .location-title {
 						color: #666;
 					}
 
